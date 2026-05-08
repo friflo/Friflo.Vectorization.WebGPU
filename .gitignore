@@ -1,0 +1,36 @@
+# --- IDE & System ---
+.vs/
+.vscode/
+bin/
+obj/
+*.user
+.DS_Store
+Thumbs.db
+
+# --- Friflo.Vectorization.WebGPU Specifics ---
+
+# 1. Ignore the temporary download/extraction folder
+temp_native/
+
+# 2. Ignore all native binaries in the runtimes folder
+# This keeps the repo lean
+runtimes/**/*.dll
+runtimes/**/*.so
+runtimes/**/*.dylib
+runtimes/**/*.a
+runtimes/**/*.pdb
+
+# 3. Explicitly ALLOW the tracking text files in the runtimes folder
+# This ensures you have the "Source ZIP" documentation in Git
+!runtimes/**/*.txt
+
+# 4. Ensure the include directory is tracked
+# (Usually not ignored by default, but good to keep in mind)
+!include/*.h
+
+# --- NuGet ---
+*.nupkg
+*.snupkg
+
+# --- Optional: Local environment files ---
+*.log
