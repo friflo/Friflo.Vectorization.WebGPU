@@ -34,3 +34,5 @@ runtimes/**/*.pdb
 
 # --- Optional: Local environment files ---
 *.log
+
+.idea
