@@ -1,5 +1,7 @@
 # Friflo.Vectorization.WebGPU
 
+Designed to provide a high-performance WebGPU backend for https://github.com/friflo/Friflo.Vectorization  
+enabling hardware-accelerated compute using `wgpu-native` with zero-overhead C# bindings."
 
 ## Setup
 
