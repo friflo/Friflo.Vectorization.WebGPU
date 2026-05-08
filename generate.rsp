@@ -1,0 +1,16 @@
+--file
+include/wgpu.h
+--file
+include/webgpu.h
+--output
+WebGPU/WebGPU_native.cs
+--namespace
+Friflo.Vectorization.WebGPU
+--include-directory
+include
+--config
+generate-unmanaged-constants
+--libraryPath
+wgpu_native
+--methodClassName
+WebGPU_native
