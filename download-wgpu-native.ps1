@@ -62,8 +62,8 @@ foreach ($art in $artifacts) {
         $infoFilePath = Join-Path $targetDir $infoFileName
         
         $content = @"
-Source ZIP:   $zipFileName
-Release Tag:  $version
+Source ZIP:   $zipFileName  
+Release Tag:  $version  
 Download Url: $($art.Url)
 "@
         Set-Content -Path $infoFilePath -Value $content
