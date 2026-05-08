@@ -26,7 +26,7 @@ Generate initial C# with **ClangSharp**
 ClangSharpPInvokeGenerator "@generate.rsp"
 ```
 
-Generate file `WebGPU.cs` requires adjustments
+*generate file `WebGPU.cs` requires adjustments*
 
 Make Rider happy by adding the comments at the top
 ```cs
