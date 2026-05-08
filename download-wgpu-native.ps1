@@ -58,7 +58,7 @@ foreach ($art in $artifacts) {
         Copy-Item $sourceFile.FullName -Destination (Join-Path $targetDir $art.LibName) -Force
         
         # Create metadata file named after the zip (e.g., wgpu-windows-...zip.txt)
-        $infoFileName = "$zipFileName.txt"
+        $infoFileName = "$zipFileName.md"
         $infoFilePath = Join-Path $targetDir $infoFileName
         
         $content = @"
