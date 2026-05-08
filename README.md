@@ -20,13 +20,13 @@ with Power Shell
 
 ### Generate C# Binding
 
-Generate initial C# with **ClangSharp**
+Generate initial `WebGPU_native.cs` with **ClangSharp**
 
 ```powershell
 ClangSharpPInvokeGenerator "@generate.rsp"
 ```
 
-*generate file `WebGPU.cs` requires adjustments*
+*generate `WebGPU_native.cs` requires adjustments*
 
 Make Rider happy by adding the comments at the top
 ```cs
