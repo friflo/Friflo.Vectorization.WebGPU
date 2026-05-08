@@ -15,5 +15,16 @@
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
       <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
+    
+    <ItemGroup>
+      <!-- Für den lokalen Build & Tests: Kopiert die DLLs in den bin-Ordner -->
+      <None Include="..\runtimes\**\*.*">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        <Link>runtimes\%(RecursiveDir)%(Filename)%(Extension)</Link>
+        <!-- WICHTIG für NuGet: Packt die Dateien an die richtige Stelle im .nupkg -->
+        <PackagePath>runtimes\</PackagePath>
+        <Pack>true</Pack>
+      </None>
+    </ItemGroup>
 
 </Project>

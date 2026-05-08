@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGPU", "WebGPU\WebGPU.csproj", "{6C5C40AA-A2DB-4520-94AD-6ECAAC334866}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{C42B2197-1ACB-4EF4-AF2A-6CF66DB3E7FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{6C5C40AA-A2DB-4520-94AD-6ECAAC334866}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C5C40AA-A2DB-4520-94AD-6ECAAC334866}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C5C40AA-A2DB-4520-94AD-6ECAAC334866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C42B2197-1ACB-4EF4-AF2A-6CF66DB3E7FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C42B2197-1ACB-4EF4-AF2A-6CF66DB3E7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C42B2197-1ACB-4EF4-AF2A-6CF66DB3E7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C42B2197-1ACB-4EF4-AF2A-6CF66DB3E7FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
