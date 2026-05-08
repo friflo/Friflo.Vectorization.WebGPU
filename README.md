@@ -3,25 +3,24 @@
 
 ## Setup
 
-Generate initial dotnet tool [ClangSharpPInvokeGenerator](https://github.com/dotnet/ClangSharp)
+Install dotnet tool [ClangSharpPInvokeGenerator](https://github.com/dotnet/ClangSharp)
 
 ```powershell
 dotnet tool install -g ClangSharpPInvokeGenerator
 ```
 
 
-## 🛠 Download libraries from [wgpu-native](https://github.com/gfx-rs/wgpu-native)
+### Download libraries 
 
-To keep the repository light, native binaries are not checked in. 
-To fetch the runtimes for all platforms, simply run the included PowerShell script:
-
+Download libraries and include from: https://github.com/gfx-rs/wgpu-native/releases  
+with Power Shell
 ```powershell
 ./download-wgpu-native.ps1
 ```
 
 ### Generate C# Binding
 
-Generate initial C# with [ClangSharp](https://github.com/dotnet/ClangSharp)
+Generate initial C# with **ClangSharp**
 
 ```powershell
 ClangSharpPInvokeGenerator "@generate.rsp"
@@ -36,12 +35,12 @@ Make Rider happy by adding the comments at the top
 // ReSharper disable PartialTypeWithSinglePart
 ```
 
-Make enum short symbol names short. E.g.  
+Strip long enum names.
 ```powershell
 ./strip_enums.ps1
 ```
 
-Make type names short. E.g.  
+Strip long type names
 ```powershell
 ./strip_types.ps1
 ```
