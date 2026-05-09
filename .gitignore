@@ -7,6 +7,8 @@ obj/
 .DS_Store
 Thumbs.db
 
+*.lscache
+
 # --- Friflo.Vectorization.WebGPU Specifics ---
 
 # 1. Ignore the temporary download/extraction folder
