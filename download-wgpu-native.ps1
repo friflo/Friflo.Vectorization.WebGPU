@@ -3,22 +3,23 @@
 $ErrorActionPreference = "Stop"
 
 # --- Configuration ---
-$version = "v29.0.0.0" 
+$url       = "https://github.com/gfx-rs/wgpu-native/releases/download"
+$version    = "v29.0.0.0"
 $baseOutDir = "./runtimes"
 $includeDir = "./include" 
-$tempDir = "./temp_native"
+$tempDir    = "./temp_native"
 
 # Comprehensive list of artifacts for all major .NET platforms
 $artifacts = @(
-    @{ Url = "https://github.com/gfx-rs/wgpu-native/releases/download/$version/wgpu-windows-x86_64-msvc-release.zip";   RID = "win-x64";        LibName = "wgpu_native.dll" },
-    @{ Url = "https://github.com/gfx-rs/wgpu-native/releases/download/$version/wgpu-linux-x86_64-release.zip";          RID = "linux-x64";      LibName = "libwgpu_native.so" },
-    @{ Url = "https://github.com/gfx-rs/wgpu-native/releases/download/$version/wgpu-android-aarch64-release.zip";       RID = "android-arm64";  LibName = "libwgpu_native.so" },
-    @{ Url = "https://github.com/gfx-rs/wgpu-native/releases/download/$version/wgpu-ios-aarch64-release.zip";           RID = "ios-arm64";      LibName = "libwgpu_native.a" },
-    @{ Url = "https://github.com/gfx-rs/wgpu-native/releases/download/$version/wgpu-macos-aarch64-release.zip";         RID = "osx-arm64";      LibName = "libwgpu_native.dylib" },
-    @{ Url = "https://github.com/gfx-rs/wgpu-native/releases/download/$version/wgpu-macos-x86_64-release.zip";          RID = "osx-x64";        LibName = "libwgpu_native.dylib" }
-    @{ Url = "https://github.com/gfx-rs/wgpu-native/releases/download/$version/wgpu-linux-aarch64-release.zip";         RID = "linux-arm64";    LibName = "libwgpu_native.so" },
-    @{ Url = "https://github.com/gfx-rs/wgpu-native/releases/download/$version/wgpu-android-x86_64-release.zip";        RID = "android-x64";    LibName = "libwgpu_native.so" },
-    @{ Url = "https://github.com/gfx-rs/wgpu-native/releases/download/$version/wgpu-windows-aarch64-msvc-release.zip";  RID = "win-arm64";      LibName = "wgpu_native.dll" }
+    @{ Url = "$url/$version/wgpu-windows-x86_64-msvc-release.zip";  RID = "win-x64";        LibName = "wgpu_native.dll"        },
+    @{ Url = "$url/$version/wgpu-linux-x86_64-release.zip";         RID = "linux-x64";      LibName = "libwgpu_native.so"      },
+    @{ Url = "$url/$version/wgpu-android-aarch64-release.zip";      RID = "android-arm64";  LibName = "libwgpu_native.so"      },
+    @{ Url = "$url/$version/wgpu-ios-aarch64-release.zip";          RID = "ios-arm64";      LibName = "libwgpu_native.a"       },
+    @{ Url = "$url/$version/wgpu-macos-aarch64-release.zip";        RID = "osx-arm64";      LibName = "libwgpu_native.dylib"   },
+    @{ Url = "$url/$version/wgpu-macos-x86_64-release.zip";         RID = "osx-x64";        LibName = "libwgpu_native.dylib"   }
+    @{ Url = "$url/$version/wgpu-linux-aarch64-release.zip";        RID = "linux-arm64";    LibName = "libwgpu_native.so"      },
+    @{ Url = "$url/$version/wgpu-android-x86_64-release.zip";       RID = "android-x64";    LibName = "libwgpu_native.so"      },
+    @{ Url = "$url/$version/wgpu-windows-aarch64-msvc-release.zip"; RID = "win-arm64";      LibName = "wgpu_native.dll"        }
 )
 
 # --- Directory Setup ---
