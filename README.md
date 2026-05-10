@@ -28,7 +28,7 @@ Generate initial `WebGPU_native.cs` with **ClangSharp**
 ClangSharpPInvokeGenerator "@generate.rsp"
 ```
 
-*generate `WebGPU_native.cs` requires adjustments*
+*generated `WebGPU_native.cs` requires adjustments*
 
 Make Rider happy by adding the comments at the top
 ```cs
