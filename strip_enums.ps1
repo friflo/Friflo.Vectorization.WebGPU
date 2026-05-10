@@ -1,4 +1,4 @@
-$file = "WebGPU/WebGPU_native.cs"
+$file = "WebGPU.Runtime/WebGPU_native.cs"
 $content = Get-Content $file -Raw
 
 # RegEx-Logik für Enums

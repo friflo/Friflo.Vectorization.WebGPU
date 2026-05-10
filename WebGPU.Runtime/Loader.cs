@@ -1,8 +1,10 @@
-﻿using System.Reflection;
+﻿using System;
+using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 // ReSharper disable InconsistentNaming
 
-namespace Friflo.Vectorization.WebGPU;
+namespace Friflo.Vectorization.WebGPU.Runtime;
 
 public static partial class WebGPU_native
 {

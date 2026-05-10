@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGPU", "WebGPU\WebGPU.csproj", "{6C5C40AA-A2DB-4520-94AD-6ECAAC334866}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGPU.Runtime", "WebGPU.Runtime\WebGPU.Runtime.csproj", "{6C5C40AA-A2DB-4520-94AD-6ECAAC334866}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{C42B2197-1ACB-4EF4-AF2A-6CF66DB3E7FF}"
 EndProject

@@ -1,4 +1,6 @@
-﻿namespace Friflo.Vectorization.WebGPU;
+﻿using System;
+
+namespace Friflo.Vectorization.WebGPU.Runtime;
 
 
 [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter | AttributeTargets.ReturnValue)]

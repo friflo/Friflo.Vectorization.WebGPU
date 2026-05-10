@@ -22,7 +22,7 @@
     </ItemGroup>
     
     <ItemGroup>
-      <ProjectReference Include="..\WebGPU\WebGPU.csproj" />
+      <ProjectReference Include="..\WebGPU.Runtime\WebGPU.Runtime.csproj" />
     </ItemGroup>
     
 

@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 // ReSharper disable UnusedType.Global
 // ReSharper disable InconsistentNaming
 // ReSharper disable PartialTypeWithSinglePart
-namespace Friflo.Vectorization.WebGPU
+namespace Friflo.Vectorization.WebGPU.Runtime
 {
     public enum NativeSType
     {
@@ -989,9 +989,9 @@ namespace Friflo.Vectorization.WebGPU
     public enum TextureDimension
     {
         Undefined = 0x00000000,
-    D1D = 0x00000001,
-    D2D = 0x00000002,
-    D3D = 0x00000003,
+        D1D = 0x00000001,
+        D2D = 0x00000002,
+        D3D = 0x00000003,
         Force32 = 0x7FFFFFFF,
     }
 
@@ -1117,12 +1117,12 @@ namespace Friflo.Vectorization.WebGPU
     public enum TextureViewDimension
     {
         Undefined = 0x00000000,
-    D1D = 0x00000001,
-    D2D = 0x00000002,
-    D2DArray = 0x00000003,
+        D1D = 0x00000001,
+        D2D = 0x00000002,
+        D2DArray = 0x00000003,
         Cube = 0x00000004,
         CubeArray = 0x00000005,
-    D3D = 0x00000006,
+        D3D = 0x00000006,
         Force32 = 0x7FFFFFFF,
     }
 

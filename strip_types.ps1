@@ -1,4 +1,4 @@
-$targetFile = "WebGPU/WebGPU_native.cs"
+$targetFile = "WebGPU.Runtime/WebGPU_native.cs"
 
 if (-not (Test-Path $targetFile)) {
     Write-Host "Fehler: $targetFile nicht gefunden!" -ForegroundColor Red

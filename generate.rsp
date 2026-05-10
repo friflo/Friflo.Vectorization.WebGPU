@@ -3,9 +3,9 @@ include/wgpu.h
 --file
 include/webgpu.h
 --output
-WebGPU/WebGPU_native.cs
+WebGPU.Runtime/WebGPU_native.cs
 --namespace
-Friflo.Vectorization.WebGPU
+Friflo.Vectorization.WebGPU.Runtime
 --include-directory
 include
 --config
