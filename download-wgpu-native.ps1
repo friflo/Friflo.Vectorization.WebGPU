@@ -57,22 +57,26 @@ foreach ($art in $artifacts) {
     if (!(Test-Path $targetDir)) { New-Item -ItemType Directory -Force $targetDir | Out-Null }
     $sourceFile = Get-ChildItem -Path $extractPath -Filter $art.LibName -Recurse | Select-Object -First 1
 
-    if ($sourceFile) {
+if ($sourceFile) {
         # Copy binary
         Copy-Item $sourceFile.FullName -Destination (Join-Path $targetDir $art.LibName) -Force
         
-        # Create metadata file named after the zip (e.g., wgpu-windows-...zip.txt)
+        $zipHash = (Get-FileHash -Path $downloadPath -Algorithm SHA256).Hash.ToLower()
+        
+        # Create metadata file
         $infoFileName = "$zipFileName.md"
         $infoFilePath = Join-Path $targetDir $infoFileName
         
         $content = @"
-Source ZIP:   $zipFileName  
-Release Tag:  $version  
-Download Url: $($art.Url)
+Source ZIP:     $zipFileName  
+Native Library: $($art.LibName)  
+Release Tag:    $version  
+SHA-256 (ZIP):  $zipHash  
+Download Url:   $($art.Url)  
 "@
         Set-Content -Path $infoFilePath -Value $content
         
-        Write-Host "  -> Success: $($art.LibName) and $infoFileName created." -ForegroundColor Green
+        Write-Host "  -> Success: $($art.LibName) and $infoFileName (lowercase hash) created." -ForegroundColor Green
     }
 
     # 4. Header Sync (Win-x64 as master source)
