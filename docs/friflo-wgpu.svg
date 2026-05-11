@@ -263,7 +263,7 @@
      id="namedview8425"
      showgrid="false"
      inkscape:zoom="7.9903066"
-     inkscape:cx="55.066723"
+     inkscape:cx="55.129299"
      inkscape:cy="31.60079"
      inkscape:window-x="-7"
      inkscape:window-y="-7"
@@ -291,7 +291,7 @@
      id="path8389"
      d="m -305.10497,261.71482 h 363.977964 v 260.46992 h -363.977964 z" />
   <rect
-     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#b2b2b2;stroke-width:1.60062;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.601;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect8095-0"
      width="36.815075"
      height="45.182575"
@@ -311,15 +311,15 @@
      d="m 5.6127202,11.932055 h 49.1129708 v 20.213934 h -49.1129708 z" />
   <text
      xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.8231px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';letter-spacing:-0.835474px;word-spacing:0px;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.835474px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-     x="36.663338"
-     y="51.278008"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.2087px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:-0.85355px;word-spacing:0px;mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.85355px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="36.397221"
+     y="52.108253"
      id="text933"><tspan
        sodipodi:role="line"
        id="tspan931"
-       x="36.663338"
-       y="51.278008"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.82309914px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.835474px">gpu</tspan></text>
+       x="36.397221"
+       y="52.108253"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:18.2087px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:0.85355px">gpu</tspan></text>
   <g
      id="g2782"
      transform="matrix(0.15621239,0,0,0.15621239,0.05648307,-4.6288167)">
@@ -342,7 +342,7 @@
   </g>
   <g
      id="g1"
-     transform="matrix(0.80144695,0,0,0.80144695,9.3797442,10.620904)">
+     transform="matrix(0.85461256,0,0,0.85461256,6.2786336,9.255615)">
     <g
        transform="matrix(0.66989857,0,0,0.66989857,8.2210933,-8.8386953)"
        id="g14">
