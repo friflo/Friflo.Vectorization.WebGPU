@@ -11,8 +11,8 @@ $tempDir    = "./temp_native"
 
 # Comprehensive list of artifacts - LibName is target name with prefix
 $artifacts = @(
-    @{ Url = "$url/$version/wgpu-windows-x86_64-msvc-release.zip";   RID = "win-x64";       LibName = "friflo_wgpu_native.dll"    },
-    @{ Url = "$url/$version/wgpu-linux-x86_64-release.zip";         RID = "linux-x64";      LibName = "libfriflo_wgpu_native.so"  },
+    @{ Url = "$url/$version/wgpu-windows-x86_64-msvc-release.zip";   RID = "win-x64";        LibName = "friflo_wgpu_native.dll"    },
+    @{ Url = "$url/$version/wgpu-linux-x86_64-release.zip";          RID = "linux-x64";      LibName = "libfriflo_wgpu_native.so"  },
     @{ Url = "$url/$version/wgpu-android-aarch64-release.zip";       RID = "android-arm64";  LibName = "libfriflo_wgpu_native.so"  },
     @{ Url = "$url/$version/wgpu-ios-aarch64-release.zip";           RID = "ios-arm64";      LibName = "libfriflo_wgpu_native.a"   },
     @{ Url = "$url/$version/wgpu-macos-aarch64-release.zip";         RID = "osx-arm64";      LibName = "libfriflo_wgpu_native.dylib"},
