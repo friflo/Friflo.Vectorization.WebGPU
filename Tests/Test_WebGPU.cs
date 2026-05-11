@@ -20,8 +20,8 @@ public class Test_WebGPU
         {
 
         }
-        BufferUsage eee = BufferUsage.CopyDst;
     }
+    
 
     [Test]
     public static unsafe  void CreateInstance()
@@ -51,5 +51,12 @@ public class Test_WebGPU
             callback = &OnAdapterReceived,
         };
         wgpuInstanceRequestAdapter(instance, &options, callbackInfo);
+    }
+    
+    public static void UseEnums()
+    {
+        _ = BufferUsage.CopyDst;
+        _ = ShaderStage.Fragment;
+        _ = MapMode.Read;
     }
 }

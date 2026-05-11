@@ -19,3 +19,20 @@ public enum BufferUsage : ulong
     Indirect        = BufferUsage_Indirect,
     QueryResolve    = BufferUsage_QueryResolve
 }
+
+[Flags]
+public enum ShaderStage : ulong
+{
+    None        = ShaderStage_None,
+    Vertex      = ShaderStage_Vertex,
+    Fragment    = ShaderStage_Fragment,
+    Compute     = ShaderStage_Compute,
+}
+
+[Flags]
+public enum MapMode : ulong
+{
+    None    = MapMode_None,
+    Read    = MapMode_Read,
+    Write   = MapMode_Write,
+}
