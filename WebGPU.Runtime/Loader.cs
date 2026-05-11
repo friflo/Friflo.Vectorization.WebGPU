@@ -8,7 +8,7 @@ namespace Friflo.Vectorization.WebGPU.Runtime;
 
 public static partial class WebGPU_native
 {
-    private const string LibName = "wgpu_native";
+    private const string LibName = "friflo_wgpu_native";
 
     static WebGPU_native()
     {

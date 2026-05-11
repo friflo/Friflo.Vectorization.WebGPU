@@ -11,6 +11,6 @@ include
 --config
 generate-unmanaged-constants
 --libraryPath
-wgpu_native
+friflo_wgpu_native
 --methodClassName
 WebGPU_native

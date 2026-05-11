@@ -989,9 +989,9 @@ namespace Friflo.Vectorization.WebGPU.Runtime
     public enum TextureDimension
     {
         Undefined = 0x00000000,
-        D1D = 0x00000001,
-        D2D = 0x00000002,
-        D3D = 0x00000003,
+    D1D = 0x00000001,
+    D2D = 0x00000002,
+    D3D = 0x00000003,
         Force32 = 0x7FFFFFFF,
     }
 
@@ -1117,12 +1117,12 @@ namespace Friflo.Vectorization.WebGPU.Runtime
     public enum TextureViewDimension
     {
         Undefined = 0x00000000,
-        D1D = 0x00000001,
-        D2D = 0x00000002,
-        D2DArray = 0x00000003,
+    D1D = 0x00000001,
+    D2D = 0x00000002,
+    D2DArray = 0x00000003,
         Cube = 0x00000004,
         CubeArray = 0x00000005,
-        D3D = 0x00000006,
+    D3D = 0x00000006,
         Force32 = 0x7FFFFFFF,
     }
 
@@ -2604,91 +2604,91 @@ namespace Friflo.Vectorization.WebGPU.Runtime
         [NativeTypeName("const InstanceFlag")]
         public const ulong InstanceFlag_Force32 = 0x7FFFFFFF;
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuGenerateReport([NativeTypeName("Instance")] Instance* instance, GlobalReport* report);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("size_t")]
         public static extern nuint wgpuInstanceEnumerateAdapters([NativeTypeName("Instance")] Instance* instance, [NativeTypeName("const InstanceEnumerateAdapterOptions *")] InstanceEnumerateAdapterOptions* options, [NativeTypeName("Adapter *")] Adapter** adapters);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("SubmissionIndex")]
         public static extern ulong wgpuQueueSubmitForIndex([NativeTypeName("Queue")] Queue* queue, [NativeTypeName("size_t")] nuint commandCount, [NativeTypeName("const CommandBuffer *")] CommandBuffer** commands);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern float wgpuQueueGetTimestampPeriod([NativeTypeName("Queue")] Queue* queue);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Bool")]
         public static extern uint wgpuDevicePoll([NativeTypeName("Device")] Device* device, [NativeTypeName("Bool")] uint wait, [NativeTypeName("const SubmissionIndex *")] ulong* submissionIndex);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("ShaderModule")]
         public static extern ShaderModule* wgpuDeviceCreateShaderModuleSpirV([NativeTypeName("Device")] Device* device, [NativeTypeName("const ShaderModuleDescriptorSpirV *")] ShaderModuleDescriptorSpirV* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSetLogCallback([NativeTypeName("LogCallback")] delegate* unmanaged[Cdecl]<LogLevel, StringView, void*, void> callback, void* userdata);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSetLogLevel(LogLevel level);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("uint32_t")]
         public static extern uint wgpuGetVersion();
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void* wgpuDeviceGetNativeMetalDevice([NativeTypeName("Device")] Device* device);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void* wgpuQueueGetNativeMetalCommandQueue([NativeTypeName("Queue")] Queue* queue);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void* wgpuTextureGetNativeMetalTexture([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetImmediates([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* encoder, [NativeTypeName("uint32_t")] uint offset, [NativeTypeName("uint32_t")] uint sizeBytes, [NativeTypeName("const void *")] void* data);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderSetImmediates([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* encoder, [NativeTypeName("uint32_t")] uint offset, [NativeTypeName("uint32_t")] uint sizeBytes, [NativeTypeName("const void *")] void* data);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderSetImmediates([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* encoder, [NativeTypeName("uint32_t")] uint offset, [NativeTypeName("uint32_t")] uint sizeBytes, [NativeTypeName("const void *")] void* data);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderMultiDrawIndirect([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* encoder, [NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("uint64_t")] ulong offset, [NativeTypeName("uint32_t")] uint count);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderMultiDrawIndexedIndirect([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* encoder, [NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("uint64_t")] ulong offset, [NativeTypeName("uint32_t")] uint count);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderMultiDrawIndirectCount([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* encoder, [NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("uint64_t")] ulong offset, [NativeTypeName("Buffer")] Buffer* count_buffer, [NativeTypeName("uint64_t")] ulong count_buffer_offset, [NativeTypeName("uint32_t")] uint max_count);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderMultiDrawIndexedIndirectCount([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* encoder, [NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("uint64_t")] ulong offset, [NativeTypeName("Buffer")] Buffer* count_buffer, [NativeTypeName("uint64_t")] ulong count_buffer_offset, [NativeTypeName("uint32_t")] uint max_count);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderBeginPipelineStatisticsQuery([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder, [NativeTypeName("QuerySet")] QuerySet* querySet, [NativeTypeName("uint32_t")] uint queryIndex);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderEndPipelineStatisticsQuery([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderBeginPipelineStatisticsQuery([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("QuerySet")] QuerySet* querySet, [NativeTypeName("uint32_t")] uint queryIndex);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderEndPipelineStatisticsQuery([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderWriteTimestamp([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder, [NativeTypeName("QuerySet")] QuerySet* querySet, [NativeTypeName("uint32_t")] uint queryIndex);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderWriteTimestamp([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("QuerySet")] QuerySet* querySet, [NativeTypeName("uint32_t")] uint queryIndex);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Bool")]
         public static extern uint wgpuDeviceStartGraphicsDebuggerCapture([NativeTypeName("Device")] Device* device);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuDeviceStopGraphicsDebuggerCapture([NativeTypeName("Device")] Device* device);
 
         [NativeTypeName("const BufferUsage")]
@@ -2784,638 +2784,638 @@ namespace Friflo.Vectorization.WebGPU.Runtime
         [NativeTypeName("const TextureUsage")]
         public const ulong TextureUsage_TransientAttachment = 0x0000000000000020;
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Instance")]
         public static extern Instance* wgpuCreateInstance([NativeTypeName("const InstanceDescriptor *")] InstanceDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuGetInstanceFeatures(SupportedInstanceFeatures* features);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Status wgpuGetInstanceLimits(InstanceLimits* limits);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Bool")]
         public static extern uint wgpuHasInstanceFeature(InstanceFeatureName feature);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Proc")]
         public static extern delegate* unmanaged[Cdecl]<void> wgpuGetProcAddress(StringView procName);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuAdapterGetFeatures([NativeTypeName("Adapter")] Adapter* adapter, SupportedFeatures* features);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Status wgpuAdapterGetInfo([NativeTypeName("Adapter")] Adapter* adapter, AdapterInfo* info);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Status wgpuAdapterGetLimits([NativeTypeName("Adapter")] Adapter* adapter, Limits* limits);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Bool")]
         public static extern uint wgpuAdapterHasFeature([NativeTypeName("Adapter")] Adapter* adapter, FeatureName feature);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Future wgpuAdapterRequestDevice([NativeTypeName("Adapter")] Adapter* adapter, [NativeTypeName("const DeviceDescriptor *")] DeviceDescriptor* descriptor, RequestDeviceCallbackInfo callbackInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuAdapterAddRef([NativeTypeName("Adapter")] Adapter* adapter);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuAdapterRelease([NativeTypeName("Adapter")] Adapter* adapter);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuAdapterInfoFreeMembers(AdapterInfo adapterInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBindGroupSetLabel([NativeTypeName("BindGroup")] BindGroup* bindGroup, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBindGroupAddRef([NativeTypeName("BindGroup")] BindGroup* bindGroup);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBindGroupRelease([NativeTypeName("BindGroup")] BindGroup* bindGroup);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBindGroupLayoutSetLabel([NativeTypeName("BindGroupLayout")] BindGroupLayout* bindGroupLayout, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBindGroupLayoutAddRef([NativeTypeName("BindGroupLayout")] BindGroupLayout* bindGroupLayout);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBindGroupLayoutRelease([NativeTypeName("BindGroupLayout")] BindGroupLayout* bindGroupLayout);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBufferDestroy([NativeTypeName("Buffer")] Buffer* buffer);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("const void *")]
         public static extern void* wgpuBufferGetConstMappedRange([NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("size_t")] nuint offset, [NativeTypeName("size_t")] nuint size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void* wgpuBufferGetMappedRange([NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("size_t")] nuint offset, [NativeTypeName("size_t")] nuint size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern BufferMapState wgpuBufferGetMapState([NativeTypeName("Buffer")] Buffer* buffer);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("uint64_t")]
         public static extern ulong wgpuBufferGetSize([NativeTypeName("Buffer")] Buffer* buffer);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("BufferUsage")]
         public static extern ulong wgpuBufferGetUsage([NativeTypeName("Buffer")] Buffer* buffer);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Future wgpuBufferMapAsync([NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("MapMode")] ulong mode, [NativeTypeName("size_t")] nuint offset, [NativeTypeName("size_t")] nuint size, BufferMapCallbackInfo callbackInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Status wgpuBufferReadMappedRange([NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("size_t")] nuint offset, void* data, [NativeTypeName("size_t")] nuint size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBufferSetLabel([NativeTypeName("Buffer")] Buffer* buffer, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBufferUnmap([NativeTypeName("Buffer")] Buffer* buffer);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Status wgpuBufferWriteMappedRange([NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("size_t")] nuint offset, [NativeTypeName("const void *")] void* data, [NativeTypeName("size_t")] nuint size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBufferAddRef([NativeTypeName("Buffer")] Buffer* buffer);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuBufferRelease([NativeTypeName("Buffer")] Buffer* buffer);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandBufferSetLabel([NativeTypeName("CommandBuffer")] CommandBuffer* commandBuffer, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandBufferAddRef([NativeTypeName("CommandBuffer")] CommandBuffer* commandBuffer);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandBufferRelease([NativeTypeName("CommandBuffer")] CommandBuffer* commandBuffer);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("ComputePassEncoder")]
         public static extern ComputePassEncoder* wgpuCommandEncoderBeginComputePass([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("const ComputePassDescriptor *")] ComputePassDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("RenderPassEncoder")]
         public static extern RenderPassEncoder* wgpuCommandEncoderBeginRenderPass([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("const RenderPassDescriptor *")] RenderPassDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderClearBuffer([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("uint64_t")] ulong offset, [NativeTypeName("uint64_t")] ulong size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderCopyBufferToBuffer([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("Buffer")] Buffer* source, [NativeTypeName("uint64_t")] ulong sourceOffset, [NativeTypeName("Buffer")] Buffer* destination, [NativeTypeName("uint64_t")] ulong destinationOffset, [NativeTypeName("uint64_t")] ulong size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderCopyBufferToTexture([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("const TexelCopyBufferInfo *")] TexelCopyBufferInfo* source, [NativeTypeName("const TexelCopyTextureInfo *")] TexelCopyTextureInfo* destination, [NativeTypeName("const Extent3D *")] Extent3D* copySize);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderCopyTextureToBuffer([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("const TexelCopyTextureInfo *")] TexelCopyTextureInfo* source, [NativeTypeName("const TexelCopyBufferInfo *")] TexelCopyBufferInfo* destination, [NativeTypeName("const Extent3D *")] Extent3D* copySize);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderCopyTextureToTexture([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("const TexelCopyTextureInfo *")] TexelCopyTextureInfo* source, [NativeTypeName("const TexelCopyTextureInfo *")] TexelCopyTextureInfo* destination, [NativeTypeName("const Extent3D *")] Extent3D* copySize);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("CommandBuffer")]
         public static extern CommandBuffer* wgpuCommandEncoderFinish([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("const CommandBufferDescriptor *")] CommandBufferDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderInsertDebugMarker([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, StringView markerLabel);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderPopDebugGroup([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderPushDebugGroup([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, StringView groupLabel);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderResolveQuerySet([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("QuerySet")] QuerySet* querySet, [NativeTypeName("uint32_t")] uint firstQuery, [NativeTypeName("uint32_t")] uint queryCount, [NativeTypeName("Buffer")] Buffer* destination, [NativeTypeName("uint64_t")] ulong destinationOffset);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderSetLabel([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderWriteTimestamp([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder, [NativeTypeName("QuerySet")] QuerySet* querySet, [NativeTypeName("uint32_t")] uint queryIndex);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderAddRef([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuCommandEncoderRelease([NativeTypeName("CommandEncoder")] CommandEncoder* commandEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderDispatchWorkgroups([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder, [NativeTypeName("uint32_t")] uint workgroupCountX, [NativeTypeName("uint32_t")] uint workgroupCountY, [NativeTypeName("uint32_t")] uint workgroupCountZ);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderDispatchWorkgroupsIndirect([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder, [NativeTypeName("Buffer")] Buffer* indirectBuffer, [NativeTypeName("uint64_t")] ulong indirectOffset);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderEnd([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderInsertDebugMarker([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder, StringView markerLabel);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderPopDebugGroup([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderPushDebugGroup([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder, StringView groupLabel);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderSetBindGroup([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder, [NativeTypeName("uint32_t")] uint groupIndex, [NativeTypeName("BindGroup")] BindGroup* group, [NativeTypeName("size_t")] nuint dynamicOffsetCount, [NativeTypeName("const uint32_t *")] uint* dynamicOffsets);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderSetLabel([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderSetPipeline([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder, [NativeTypeName("ComputePipeline")] ComputePipeline* pipeline);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderAddRef([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePassEncoderRelease([NativeTypeName("ComputePassEncoder")] ComputePassEncoder* computePassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("BindGroupLayout")]
         public static extern BindGroupLayout* wgpuComputePipelineGetBindGroupLayout([NativeTypeName("ComputePipeline")] ComputePipeline* computePipeline, [NativeTypeName("uint32_t")] uint groupIndex);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePipelineSetLabel([NativeTypeName("ComputePipeline")] ComputePipeline* computePipeline, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePipelineAddRef([NativeTypeName("ComputePipeline")] ComputePipeline* computePipeline);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuComputePipelineRelease([NativeTypeName("ComputePipeline")] ComputePipeline* computePipeline);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("BindGroup")]
         public static extern BindGroup* wgpuDeviceCreateBindGroup([NativeTypeName("Device")] Device* device, [NativeTypeName("const BindGroupDescriptor *")] BindGroupDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("BindGroupLayout")]
         public static extern BindGroupLayout* wgpuDeviceCreateBindGroupLayout([NativeTypeName("Device")] Device* device, [NativeTypeName("const BindGroupLayoutDescriptor *")] BindGroupLayoutDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Buffer")]
         public static extern Buffer* wgpuDeviceCreateBuffer([NativeTypeName("Device")] Device* device, [NativeTypeName("const BufferDescriptor *")] BufferDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("CommandEncoder")]
         public static extern CommandEncoder* wgpuDeviceCreateCommandEncoder([NativeTypeName("Device")] Device* device, [NativeTypeName("const CommandEncoderDescriptor *")] CommandEncoderDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("ComputePipeline")]
         public static extern ComputePipeline* wgpuDeviceCreateComputePipeline([NativeTypeName("Device")] Device* device, [NativeTypeName("const ComputePipelineDescriptor *")] ComputePipelineDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Future wgpuDeviceCreateComputePipelineAsync([NativeTypeName("Device")] Device* device, [NativeTypeName("const ComputePipelineDescriptor *")] ComputePipelineDescriptor* descriptor, CreateComputePipelineAsyncCallbackInfo callbackInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("PipelineLayout")]
         public static extern PipelineLayout* wgpuDeviceCreatePipelineLayout([NativeTypeName("Device")] Device* device, [NativeTypeName("const PipelineLayoutDescriptor *")] PipelineLayoutDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("QuerySet")]
         public static extern QuerySet* wgpuDeviceCreateQuerySet([NativeTypeName("Device")] Device* device, [NativeTypeName("const QuerySetDescriptor *")] QuerySetDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("RenderBundleEncoder")]
         public static extern RenderBundleEncoder* wgpuDeviceCreateRenderBundleEncoder([NativeTypeName("Device")] Device* device, [NativeTypeName("const RenderBundleEncoderDescriptor *")] RenderBundleEncoderDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("RenderPipeline")]
         public static extern RenderPipeline* wgpuDeviceCreateRenderPipeline([NativeTypeName("Device")] Device* device, [NativeTypeName("const RenderPipelineDescriptor *")] RenderPipelineDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Future wgpuDeviceCreateRenderPipelineAsync([NativeTypeName("Device")] Device* device, [NativeTypeName("const RenderPipelineDescriptor *")] RenderPipelineDescriptor* descriptor, CreateRenderPipelineAsyncCallbackInfo callbackInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Sampler")]
         public static extern Sampler* wgpuDeviceCreateSampler([NativeTypeName("Device")] Device* device, [NativeTypeName("const SamplerDescriptor *")] SamplerDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("ShaderModule")]
         public static extern ShaderModule* wgpuDeviceCreateShaderModule([NativeTypeName("Device")] Device* device, [NativeTypeName("const ShaderModuleDescriptor *")] ShaderModuleDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Texture")]
         public static extern Texture* wgpuDeviceCreateTexture([NativeTypeName("Device")] Device* device, [NativeTypeName("const TextureDescriptor *")] TextureDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuDeviceDestroy([NativeTypeName("Device")] Device* device);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Status wgpuDeviceGetAdapterInfo([NativeTypeName("Device")] Device* device, AdapterInfo* adapterInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuDeviceGetFeatures([NativeTypeName("Device")] Device* device, SupportedFeatures* features);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Status wgpuDeviceGetLimits([NativeTypeName("Device")] Device* device, Limits* limits);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Future wgpuDeviceGetLostFuture([NativeTypeName("Device")] Device* device);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Queue")]
         public static extern Queue* wgpuDeviceGetQueue([NativeTypeName("Device")] Device* device);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Bool")]
         public static extern uint wgpuDeviceHasFeature([NativeTypeName("Device")] Device* device, FeatureName feature);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Future wgpuDevicePopErrorScope([NativeTypeName("Device")] Device* device, PopErrorScopeCallbackInfo callbackInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuDevicePushErrorScope([NativeTypeName("Device")] Device* device, ErrorFilter filter);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuDeviceSetLabel([NativeTypeName("Device")] Device* device, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuDeviceAddRef([NativeTypeName("Device")] Device* device);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuDeviceRelease([NativeTypeName("Device")] Device* device);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuExternalTextureSetLabel([NativeTypeName("ExternalTexture")] ExternalTexture* externalTexture, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuExternalTextureAddRef([NativeTypeName("ExternalTexture")] ExternalTexture* externalTexture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuExternalTextureRelease([NativeTypeName("ExternalTexture")] ExternalTexture* externalTexture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Surface")]
         public static extern Surface* wgpuInstanceCreateSurface([NativeTypeName("Instance")] Instance* instance, [NativeTypeName("const SurfaceDescriptor *")] SurfaceDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuInstanceGetWGSLLanguageFeatures([NativeTypeName("Instance")] Instance* instance, SupportedWGSLLanguageFeatures* features);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("Bool")]
         public static extern uint wgpuInstanceHasWGSLLanguageFeature([NativeTypeName("Instance")] Instance* instance, WGSLLanguageFeatureName feature);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuInstanceProcessEvents([NativeTypeName("Instance")] Instance* instance);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Future wgpuInstanceRequestAdapter([NativeTypeName("Instance")] Instance* instance, [NativeTypeName("const RequestAdapterOptions *")] RequestAdapterOptions* options, RequestAdapterCallbackInfo callbackInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern WaitStatus wgpuInstanceWaitAny([NativeTypeName("Instance")] Instance* instance, [NativeTypeName("size_t")] nuint futureCount, FutureWaitInfo* futures, [NativeTypeName("uint64_t")] ulong timeoutNS);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuInstanceAddRef([NativeTypeName("Instance")] Instance* instance);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuInstanceRelease([NativeTypeName("Instance")] Instance* instance);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuPipelineLayoutSetLabel([NativeTypeName("PipelineLayout")] PipelineLayout* pipelineLayout, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuPipelineLayoutAddRef([NativeTypeName("PipelineLayout")] PipelineLayout* pipelineLayout);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuPipelineLayoutRelease([NativeTypeName("PipelineLayout")] PipelineLayout* pipelineLayout);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQuerySetDestroy([NativeTypeName("QuerySet")] QuerySet* querySet);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("uint32_t")]
         public static extern uint wgpuQuerySetGetCount([NativeTypeName("QuerySet")] QuerySet* querySet);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern QueryType wgpuQuerySetGetType([NativeTypeName("QuerySet")] QuerySet* querySet);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQuerySetSetLabel([NativeTypeName("QuerySet")] QuerySet* querySet, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQuerySetAddRef([NativeTypeName("QuerySet")] QuerySet* querySet);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQuerySetRelease([NativeTypeName("QuerySet")] QuerySet* querySet);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Future wgpuQueueOnSubmittedWorkDone([NativeTypeName("Queue")] Queue* queue, QueueWorkDoneCallbackInfo callbackInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQueueSetLabel([NativeTypeName("Queue")] Queue* queue, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQueueSubmit([NativeTypeName("Queue")] Queue* queue, [NativeTypeName("size_t")] nuint commandCount, [NativeTypeName("const CommandBuffer *")] CommandBuffer** commands);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQueueWriteBuffer([NativeTypeName("Queue")] Queue* queue, [NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("uint64_t")] ulong bufferOffset, [NativeTypeName("const void *")] void* data, [NativeTypeName("size_t")] nuint size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQueueWriteTexture([NativeTypeName("Queue")] Queue* queue, [NativeTypeName("const TexelCopyTextureInfo *")] TexelCopyTextureInfo* destination, [NativeTypeName("const void *")] void* data, [NativeTypeName("size_t")] nuint dataSize, [NativeTypeName("const TexelCopyBufferLayout *")] TexelCopyBufferLayout* dataLayout, [NativeTypeName("const Extent3D *")] Extent3D* writeSize);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQueueAddRef([NativeTypeName("Queue")] Queue* queue);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuQueueRelease([NativeTypeName("Queue")] Queue* queue);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleSetLabel([NativeTypeName("RenderBundle")] RenderBundle* renderBundle, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleAddRef([NativeTypeName("RenderBundle")] RenderBundle* renderBundle);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleRelease([NativeTypeName("RenderBundle")] RenderBundle* renderBundle);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderDraw([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, [NativeTypeName("uint32_t")] uint vertexCount, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstVertex, [NativeTypeName("uint32_t")] uint firstInstance);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderDrawIndexed([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, [NativeTypeName("uint32_t")] uint indexCount, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstIndex, [NativeTypeName("int32_t")] int baseVertex, [NativeTypeName("uint32_t")] uint firstInstance);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderDrawIndexedIndirect([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, [NativeTypeName("Buffer")] Buffer* indirectBuffer, [NativeTypeName("uint64_t")] ulong indirectOffset);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderDrawIndirect([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, [NativeTypeName("Buffer")] Buffer* indirectBuffer, [NativeTypeName("uint64_t")] ulong indirectOffset);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("RenderBundle")]
         public static extern RenderBundle* wgpuRenderBundleEncoderFinish([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, [NativeTypeName("const RenderBundleDescriptor *")] RenderBundleDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderInsertDebugMarker([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, StringView markerLabel);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderPopDebugGroup([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderPushDebugGroup([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, StringView groupLabel);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderSetBindGroup([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, [NativeTypeName("uint32_t")] uint groupIndex, [NativeTypeName("BindGroup")] BindGroup* group, [NativeTypeName("size_t")] nuint dynamicOffsetCount, [NativeTypeName("const uint32_t *")] uint* dynamicOffsets);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderSetIndexBuffer([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, [NativeTypeName("Buffer")] Buffer* buffer, IndexFormat format, [NativeTypeName("uint64_t")] ulong offset, [NativeTypeName("uint64_t")] ulong size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderSetLabel([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderSetPipeline([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, [NativeTypeName("RenderPipeline")] RenderPipeline* pipeline);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderSetVertexBuffer([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder, [NativeTypeName("uint32_t")] uint slot, [NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("uint64_t")] ulong offset, [NativeTypeName("uint64_t")] ulong size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderAddRef([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderBundleEncoderRelease([NativeTypeName("RenderBundleEncoder")] RenderBundleEncoder* renderBundleEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderBeginOcclusionQuery([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("uint32_t")] uint queryIndex);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderDraw([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("uint32_t")] uint vertexCount, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstVertex, [NativeTypeName("uint32_t")] uint firstInstance);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderDrawIndexed([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("uint32_t")] uint indexCount, [NativeTypeName("uint32_t")] uint instanceCount, [NativeTypeName("uint32_t")] uint firstIndex, [NativeTypeName("int32_t")] int baseVertex, [NativeTypeName("uint32_t")] uint firstInstance);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderDrawIndexedIndirect([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("Buffer")] Buffer* indirectBuffer, [NativeTypeName("uint64_t")] ulong indirectOffset);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderDrawIndirect([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("Buffer")] Buffer* indirectBuffer, [NativeTypeName("uint64_t")] ulong indirectOffset);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderEnd([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderEndOcclusionQuery([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderExecuteBundles([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("size_t")] nuint bundleCount, [NativeTypeName("const RenderBundle *")] RenderBundle** bundles);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderInsertDebugMarker([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, StringView markerLabel);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderPopDebugGroup([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderPushDebugGroup([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, StringView groupLabel);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetBindGroup([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("uint32_t")] uint groupIndex, [NativeTypeName("BindGroup")] BindGroup* group, [NativeTypeName("size_t")] nuint dynamicOffsetCount, [NativeTypeName("const uint32_t *")] uint* dynamicOffsets);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetBlendConstant([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("const Color *")] Color* color);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetIndexBuffer([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("Buffer")] Buffer* buffer, IndexFormat format, [NativeTypeName("uint64_t")] ulong offset, [NativeTypeName("uint64_t")] ulong size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetLabel([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetPipeline([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("RenderPipeline")] RenderPipeline* pipeline);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetScissorRect([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("uint32_t")] uint x, [NativeTypeName("uint32_t")] uint y, [NativeTypeName("uint32_t")] uint width, [NativeTypeName("uint32_t")] uint height);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetStencilReference([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("uint32_t")] uint reference);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetVertexBuffer([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, [NativeTypeName("uint32_t")] uint slot, [NativeTypeName("Buffer")] Buffer* buffer, [NativeTypeName("uint64_t")] ulong offset, [NativeTypeName("uint64_t")] ulong size);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderSetViewport([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder, float x, float y, float width, float height, float minDepth, float maxDepth);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderAddRef([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPassEncoderRelease([NativeTypeName("RenderPassEncoder")] RenderPassEncoder* renderPassEncoder);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("BindGroupLayout")]
         public static extern BindGroupLayout* wgpuRenderPipelineGetBindGroupLayout([NativeTypeName("RenderPipeline")] RenderPipeline* renderPipeline, [NativeTypeName("uint32_t")] uint groupIndex);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPipelineSetLabel([NativeTypeName("RenderPipeline")] RenderPipeline* renderPipeline, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPipelineAddRef([NativeTypeName("RenderPipeline")] RenderPipeline* renderPipeline);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuRenderPipelineRelease([NativeTypeName("RenderPipeline")] RenderPipeline* renderPipeline);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSamplerSetLabel([NativeTypeName("Sampler")] Sampler* sampler, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSamplerAddRef([NativeTypeName("Sampler")] Sampler* sampler);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSamplerRelease([NativeTypeName("Sampler")] Sampler* sampler);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Future wgpuShaderModuleGetCompilationInfo([NativeTypeName("ShaderModule")] ShaderModule* shaderModule, CompilationInfoCallbackInfo callbackInfo);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuShaderModuleSetLabel([NativeTypeName("ShaderModule")] ShaderModule* shaderModule, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuShaderModuleAddRef([NativeTypeName("ShaderModule")] ShaderModule* shaderModule);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuShaderModuleRelease([NativeTypeName("ShaderModule")] ShaderModule* shaderModule);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSupportedFeaturesFreeMembers(SupportedFeatures supportedFeatures);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSupportedInstanceFeaturesFreeMembers(SupportedInstanceFeatures supportedInstanceFeatures);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSupportedWGSLLanguageFeaturesFreeMembers(SupportedWGSLLanguageFeatures supportedWGSLLanguageFeatures);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSurfaceConfigure([NativeTypeName("Surface")] Surface* surface, [NativeTypeName("const SurfaceConfiguration *")] SurfaceConfiguration* config);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Status wgpuSurfaceGetCapabilities([NativeTypeName("Surface")] Surface* surface, [NativeTypeName("Adapter")] Adapter* adapter, SurfaceCapabilities* capabilities);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSurfaceGetCurrentTexture([NativeTypeName("Surface")] Surface* surface, SurfaceTexture* surfaceTexture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern Status wgpuSurfacePresent([NativeTypeName("Surface")] Surface* surface);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSurfaceSetLabel([NativeTypeName("Surface")] Surface* surface, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSurfaceUnconfigure([NativeTypeName("Surface")] Surface* surface);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSurfaceAddRef([NativeTypeName("Surface")] Surface* surface);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSurfaceRelease([NativeTypeName("Surface")] Surface* surface);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuSurfaceCapabilitiesFreeMembers(SurfaceCapabilities surfaceCapabilities);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("TextureView")]
         public static extern TextureView* wgpuTextureCreateView([NativeTypeName("Texture")] Texture* texture, [NativeTypeName("const TextureViewDescriptor *")] TextureViewDescriptor* descriptor);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuTextureDestroy([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("uint32_t")]
         public static extern uint wgpuTextureGetDepthOrArrayLayers([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TextureDimension wgpuTextureGetDimension([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TextureFormat wgpuTextureGetFormat([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("uint32_t")]
         public static extern uint wgpuTextureGetHeight([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("uint32_t")]
         public static extern uint wgpuTextureGetMipLevelCount([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("uint32_t")]
         public static extern uint wgpuTextureGetSampleCount([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern TextureViewDimension wgpuTextureGetTextureBindingViewDimension([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("TextureUsage")]
         public static extern ulong wgpuTextureGetUsage([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         [return: NativeTypeName("uint32_t")]
         public static extern uint wgpuTextureGetWidth([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuTextureSetLabel([NativeTypeName("Texture")] Texture* texture, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuTextureAddRef([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuTextureRelease([NativeTypeName("Texture")] Texture* texture);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuTextureViewSetLabel([NativeTypeName("TextureView")] TextureView* textureView, StringView label);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuTextureViewAddRef([NativeTypeName("TextureView")] TextureView* textureView);
 
-        [DllImport("wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("friflo_wgpu_native", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern void wgpuTextureViewRelease([NativeTypeName("TextureView")] TextureView* textureView);
     }
 }
