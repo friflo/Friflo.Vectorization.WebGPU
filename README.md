@@ -47,6 +47,11 @@ Strip long type names
 ./strip_types.ps1
 ```
 
+### Create .nupkg
+
+````
+dotnet pack -c Release "/p:Version=0.1.0"
+```
 
 
 
