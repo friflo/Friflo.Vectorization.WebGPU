@@ -20,6 +20,7 @@ public class Test_WebGPU
         {
 
         }
+        BufferUsage eee = BufferUsage.CopyDst;
     }
 
     [Test]

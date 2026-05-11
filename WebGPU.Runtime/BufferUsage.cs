@@ -1,7 +1,10 @@
-﻿namespace Friflo.Vectorization.WebGPU.Runtime;
+﻿using System;
+
+namespace Friflo.Vectorization.WebGPU.Runtime;
 
 using static WebGPU_native;
 
+[Flags]
 public enum BufferUsage : ulong
 {
     None            = BufferUsage_None,
