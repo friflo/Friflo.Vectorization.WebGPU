@@ -67,15 +67,17 @@ foreach ($art in $artifacts) {
         $zipHash = (Get-FileHash -Path $downloadPath -Algorithm SHA256).Hash.ToLower()
         
         # Create metadata file
-        $infoFileName = "$zipFileName.md"
+        $infoFileName = "$($art.LibName).md"
         $infoFilePath = Join-Path $targetDir $infoFileName
         
         $content = @"
-Source ZIP:     $zipFileName  
-Native Library: $($art.LibName) (Renamed from $originalName)  
-Release Tag:    $version  
-SHA-256 (ZIP):  $zipHash  
-Download Url:   $($art.Url)  
+Info            | Value
+--------------- | ------------------------------------
+Source ZIP      | $zipFileName
+Native Library  | $($art.LibName) (Renamed from $originalName)
+Release Tag     | $version
+SHA-256 (ZIP)   | $zipHash
+Download Url    | $($art.Url)
 "@
         Set-Content -Path $infoFilePath -Value $content
         Write-Host "  -> Success: $($art.LibName) created." -ForegroundColor Green
