@@ -4,13 +4,12 @@
 <div align="center">
 
 [![friflo wgpu](docs/friflo-wgpu.svg)](https://github.com/friflo/Friflo.Vectorization.WebGPU)
+<h1>Friflo Vectorization WebGPU</h1>
 
 </div>
 
-# Friflo.Vectorization.WebGPU
-
-Designed to provide a high-performance WebGPU backend for https://github.com/friflo/Friflo.Vectorization  
-enabling hardware-accelerated compute using `wgpu-native` with zero-overhead C# bindings."
+Designed to provide a high-performance WebGPU backend for https://github.com/friflo/Friflo.Vectorization.  
+It enables hardware-accelerated compute using `wgpu-native` with zero-overhead C# bindings."
 
 ## Setup
 
