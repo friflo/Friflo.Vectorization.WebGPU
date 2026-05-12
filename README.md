@@ -59,8 +59,18 @@ Strip long type names
 ### Create .nupkg
 
 ```
-dotnet pack -c Release "/p:Version=0.1.0"
+dotnet pack -c Release "/p:Version=0.1.0-test.1"
 ```
+
+### Local Test
+
+Register folder containing the created `.nupkg` searchable for nuget.
+```
+dotnet nuget add source "C:\...\Friflo.Vectorization.WebGPU\WebGPU.Runtime\bin\Release" --name "WebGPULocal"
+```
+
+Register new version of test package in your *.csproj
+
 
 
 
