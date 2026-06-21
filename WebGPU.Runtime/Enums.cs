@@ -36,3 +36,15 @@ public enum MapMode : ulong
     Read    = MapMode_Read,
     Write   = MapMode_Write,
 }
+
+[Flags]
+public enum TextureUsage : ulong
+{
+    None                = TextureUsage_None,
+    CopySrc             = TextureUsage_CopySrc,
+    CopyDst             = TextureUsage_CopyDst,
+    TextureBinding      = TextureUsage_TextureBinding,
+    StorageBinding      = TextureUsage_StorageBinding,
+    RenderAttachment    = TextureUsage_RenderAttachment,
+    TransientAttachment = TextureUsage_TransientAttachment
+}
