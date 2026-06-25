@@ -1,4 +1,5 @@
 ﻿using System;
+// ReSharper disable InconsistentNaming
 
 namespace Friflo.Vectorization.WebGPU.Runtime;
 
@@ -48,3 +49,21 @@ public enum TextureUsage : ulong
     RenderAttachment    = TextureUsage_RenderAttachment,
     TransientAttachment = TextureUsage_TransientAttachment
 }
+
+[Flags]
+public enum InstanceFlag : ulong
+{
+    Empty                               = InstanceFlag_Empty,
+    Debug                               = InstanceFlag_Debug,
+    Validation                          = InstanceFlag_Validation,
+    DiscardHalLabels                    = InstanceFlag_DiscardHalLabels,
+    AllowUnderlyingNoncompliantAdapter  = InstanceFlag_AllowUnderlyingNoncompliantAdapter,
+    GPUBasedValidation                  = InstanceFlag_GPUBasedValidation,
+    ValidationIndirectCall              = InstanceFlag_ValidationIndirectCall,
+    AutomaticTimestampNormalization     = InstanceFlag_AutomaticTimestampNormalization,
+    Default                             = InstanceFlag_Default,
+    Debugging                           = InstanceFlag_Debugging,
+    AdvancedDebugging                   = InstanceFlag_AdvancedDebugging,
+    WithEnv                             = InstanceFlag_WithEnv,
+}
+
