@@ -1,9 +1,9 @@
 ﻿using System;
 // ReSharper disable InconsistentNaming
 
-namespace Friflo.Vectorization.WebGPU.Runtime;
+namespace Friflo.Vectorization.WebGPU;
 
-using static WebGPU_native;
+using static Friflo.Vectorization.WebGPU.Runtime.WebGPU_native;
 
 [Flags]
 public enum BufferUsage : ulong

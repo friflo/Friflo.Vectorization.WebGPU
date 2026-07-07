@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Friflo.Vectorization.WebGPU;
 using Friflo.Vectorization.WebGPU.Runtime;
 using NUnit.Framework;
 using static Friflo.Vectorization.WebGPU.Runtime.WebGPU_native;

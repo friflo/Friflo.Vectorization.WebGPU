@@ -57,6 +57,11 @@ Strip long type names
 ./strip_types.ps1
 ```
 
+Move enums to different file and namespace
+```powershell
+./move_enums.ps1
+```
+
 ### Create .nupkg
 
 ```
