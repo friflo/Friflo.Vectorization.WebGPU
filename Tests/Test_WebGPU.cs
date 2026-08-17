@@ -1,9 +1,9 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Friflo.Vectorization.WebGPU;
-using Friflo.Vectorization.WebGPU.Runtime;
+using Friflo.WGPU;
+using Friflo.WGPU.Runtime;
 using NUnit.Framework;
-using static Friflo.Vectorization.WebGPU.Runtime.WebGPU_native;
+using static Friflo.WGPU.Runtime.WebGPU_native;
 
 namespace Tests;
 

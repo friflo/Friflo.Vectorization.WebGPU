@@ -3,7 +3,7 @@
 // ReSharper disable UnusedType.Global
 // ReSharper disable InconsistentNaming
 // ReSharper disable PartialTypeWithSinglePart
-namespace Friflo.Vectorization.WebGPU
+namespace Friflo.WGPU
 {
     public enum NativeSType
         {

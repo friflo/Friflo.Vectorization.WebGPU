@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 // ReSharper disable UnusedType.Global
 // ReSharper disable InconsistentNaming
 // ReSharper disable PartialTypeWithSinglePart
-namespace Friflo.Vectorization.WebGPU.Runtime
+namespace Friflo.WGPU.Runtime
 {
     // public enum NativeSType
 //     {

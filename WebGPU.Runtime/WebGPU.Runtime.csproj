@@ -6,7 +6,7 @@
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AssemblyName>Friflo.Vectorization.WebGPU.Runtime</AssemblyName>
-        <RootNamespace>Friflo.Vectorization.WebGPU.Runtime</RootNamespace>
+        <RootNamespace>Friflo.WGPU.Runtime</RootNamespace>
         
         <!--
         <PackageVersion>0.0.0</PackageVersion>

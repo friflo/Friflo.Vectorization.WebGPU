@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 // ReSharper disable InconsistentNaming
 
-namespace Friflo.Vectorization.WebGPU.Runtime;
+namespace Friflo.WGPU.Runtime;
 
 public static partial class WebGPU_native
 {

@@ -1,6 +1,6 @@
 $file = "WebGPU.Runtime/WebGPU_native.cs"
 $enumFile = "WebGPU.Runtime/WebGPU_enums.cs"
-$namespaceName = "Friflo.Vectorization.WebGPU"
+$namespaceName = "Friflo.WGPU"
 
 $content = Get-Content $file -Raw
 $extractedEnums = New-Object System.Collections.Generic.List[string]
